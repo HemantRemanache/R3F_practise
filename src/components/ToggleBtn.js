@@ -6,15 +6,14 @@ import { SetWireFrame } from "../Redux/GeometryToggleSlice.js";
 
 export default function ToggleBtn() {
   const [selected, setSelected] = useState(false);
-  let checked = false;
   const dispatch = useDispatch();
   return (
     <ToggleButton
       value="check"
-      selected={checked}
+      selected={selected}
       onChange={() => {
-        setSelected(!checked);
-        dispatch(SetWireFrame(!checked));
+        setSelected(!selected);
+        dispatch(SetWireFrame(!selected));
       }}
     >
       <CheckIcon />
